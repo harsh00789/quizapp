@@ -98,21 +98,24 @@ var timefunction = setInterval(function(){
 	var formattodisplay = minute+":"+(second<10?'0':'')+second;
 	
 	timeelement.textContent = formattodisplay;
-	
-},1000);
-
-
-
-var timeouturl = "/timeout";
+	var timeouturl = "/timeout";
 if(second===0 && minute===0){
 	window.location.href = timeouturl;
 }
+
 if(second===0 && minute===0 && nextquestion>=15){
 	 var url = '/successfull?correct='+encodeURIComponent(jsoncorrect)+'&incorrect='+encodeURIComponent(jsonyouranswer)
 					 +'&question='+encodeURIComponent(jsonquestion)+'&correctnumber='+correct+'&incorrectnumber='+incorrect;
 					
 					 window.location.href = url
 }
+
+	
+},1000);
+
+
+
+
 
 	
 </script>
