@@ -15,6 +15,7 @@
 	<div class="mt-auto" style="text-align: right;padding-top:15px;padding-right: 15px;color: darkred;">
 		<h1>Timer</h1>
 	<h1 id="timer">30:00</h1>
+	
 	</div>
 	
 	<div class="container" >
@@ -100,10 +101,19 @@ var timefunction = setInterval(function(){
 	
 },1000);
 
+
+
 var timeouturl = "/timeout";
 if(second===0 && minute===0){
 	window.location.href = timeouturl;
 }
+if(second===0 && minute===0 && nextquestion>=15){
+	 var url = '/successfull?correct='+encodeURIComponent(jsoncorrect)+'&incorrect='+encodeURIComponent(jsonyouranswer)
+					 +'&question='+encodeURIComponent(jsonquestion)+'&correctnumber='+correct+'&incorrectnumber='+incorrect;
+					
+					 window.location.href = url
+}
+
 	
 </script>
 
